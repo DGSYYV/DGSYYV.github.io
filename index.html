@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/main.js"></script>
+    <title>Home</title>
+</head>
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi I'm <span>Heru</span></h1>
+                <p>I'm a</p>
+                <div class="animated-text">
+                    <b> <p id="typed-text"></p></b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end header -->
+
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/about.JPG">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Quis quidem iure, cum nulla, nam illum quisquam esse, 
+                        odit obcaecati vel tenetur vero? Natus explicabo deserunt placeat numquam ipsam vero modi.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skill')">Skill</p>
+                            <p class="tab-links" onclick="opentab('exp')">Experience</p>
+                            <p class="tab-links" onclick="opentab('edu')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skill">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                                <li><span>Web Developer</span><br>Web app development</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="exp">
+                            <ul>
+                                <li><span>  </span><br>  </li>
+                                <li><span>  </span><br>  </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="edu">
+                            <ul>
+                                <li><span>  </span><br>  </li>
+                                <li><span>  </span><br>  </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+</body>
+</html>
